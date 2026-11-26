@@ -1,0 +1,214 @@
+{
+ "tool": "rea-agents 6.8.0 (npx, 전역 설치·MCP 설정·setup 없음)",
+ "node": "v22.23.4",
+ "targets": {
+  "bg": {
+   "repo": "https://github.com/MattSkala/html5-bombergirl",
+   "commit": "0044a17d794bbfe05841a04328ccfd07146cb1b7",
+   "license": "MIT (LICENSE.txt, Copyright 2018 Matous Skala)",
+   "sparse_paths": [
+    "/js/",
+    "/index.html",
+    "/README.md",
+    "/LICENSE.txt"
+   ],
+   "excluded": [
+    "img/(그림)",
+    "sound/(소리)",
+    "lib/(CreateJS·jQuery)",
+    "css/",
+    "favicon.ico"
+   ]
+  }
+ },
+ "note": "큰 결과는 저장소에 넣지 않았다(bytes·sha256 만). 같은 명령(scripts/run-rea.sh)으로 다시 만들어 SHA-256 으로 대조한다. trace-*-input.json 은 app-bg.json 을 그대로 감싼 입력이라 따로 적지 않았다.",
+ "runs": [
+  {
+   "label": "ref-bg",
+   "command": "npx -y rea-agents@6.8.0 import-reference-source <target>/bg --format json",
+   "exit": 0,
+   "seconds": 1.9,
+   "output": {
+    "file": "ref-source-bg.json",
+    "bytes": 4175,
+    "sha256": "e791488b8c0dcfb6867dd1486785d0f670477dc0768a9d053cd6019171ea6c18"
+   }
+  },
+  {
+   "label": "ref-bg-summary",
+   "command": "npx -y rea-agents@6.8.0 import-reference-source <target>/bg --detail summary --outline-depth 3 --format json",
+   "exit": 0,
+   "seconds": 2.0,
+   "output": {
+    "file": "ref-source-bg.summary.json",
+    "bytes": 3740,
+    "sha256": "d06fc59ac7b02815373f9e27c1aef9180dba83280d7df6b8b4cc6c83c0184138"
+   }
+  },
+  {
+   "label": "app-bg",
+   "command": "npx -y rea-agents@6.8.0 analyze-javascript-application <target>/bg --source-paths-json <work>/selection-bg.json --max-semantic-nodes 300000 --max-semantic-unknowns 300000 --format json",
+   "exit": 0,
+   "seconds": 4.8,
+   "output": {
+    "file": "app-bg.json",
+    "bytes": 6697073,
+    "sha256": "04071975c4adf6d28b1ed3a3885a1ddb9a4bc9e4f0612063a7f99a71e77e2bb6"
+   }
+  },
+  {
+   "label": "view-bg-summary",
+   "command": "npx -y rea-agents@6.8.0 inspect-analysis-view view-bg-summary.json --format json",
+   "exit": 0,
+   "seconds": 2.3,
+   "output": {
+    "file": "app-bg-summary-view.json",
+    "bytes": 11642,
+    "sha256": "4668bdc656d80d23a658d90b0816d5ee2190bc74ebe55354420573f70938a751"
+   }
+  },
+  {
+   "label": "view-bg-modules",
+   "command": "npx -y rea-agents@6.8.0 inspect-analysis-view view-bg-modules.json --format json",
+   "exit": 0,
+   "seconds": 2.5,
+   "output": {
+    "file": "app-bg-modules-view.json",
+    "bytes": 13959,
+    "sha256": "189de5ce85cd95bda12441aeffa053bb2b89a12435fc6e7f63a8710cd54dec6c"
+   }
+  },
+  {
+   "label": "view-bg-facts",
+   "command": "npx -y rea-agents@6.8.0 inspect-analysis-view view-bg-facts.json --format json",
+   "exit": 0,
+   "seconds": 2.7,
+   "output": {
+    "file": "app-bg-facts-view.json",
+    "bytes": 26051,
+    "sha256": "a354f073ac04dccf50e6bd0d4f846607e788cb3e9cfbb8a064043579642be3f6"
+   }
+  },
+  {
+   "label": "feature-bomb",
+   "command": "npx -y rea-agents@6.8.0 trace-application-feature trace-feature-bomb-input.json --format json",
+   "exit": 0,
+   "seconds": 2.6,
+   "output": {
+    "file": "trace-feature-bomb.json",
+    "bytes": 89637,
+    "sha256": "1c92ad9ce7f76d9e3e8b0689282e1595fc616664ab70cbc9a116e11b7a859ca9"
+   }
+  },
+  {
+   "label": "feature-bot",
+   "command": "npx -y rea-agents@6.8.0 trace-application-feature trace-feature-bot-input.json --format json",
+   "exit": 0,
+   "seconds": 2.7,
+   "output": {
+    "file": "trace-feature-bot.json",
+    "bytes": 89635,
+    "sha256": "642b70fc34bbf83625f877d13ebee060f1f93947d0ad54b27f8655ecea92f996"
+   }
+  },
+  {
+   "label": "sem-explode-callers",
+   "command": "npx -y rea-agents@6.8.0 trace-javascript-semantics trace-semantics-explode-callers-input.json --format json",
+   "exit": 0,
+   "seconds": 2.9,
+   "output": {
+    "file": "trace-semantics-explode-callers.json",
+    "bytes": 11673,
+    "sha256": "6fba3fa420335ed5c5d3b61ccf787503ef1f892aeeb7f69d6302b3b16c422853"
+   }
+  },
+  {
+   "label": "sem-danger-callers",
+   "command": "npx -y rea-agents@6.8.0 trace-javascript-semantics trace-semantics-danger-callers-input.json --format json",
+   "exit": 0,
+   "seconds": 2.6,
+   "output": {
+    "file": "trace-semantics-danger-callers.json",
+    "bytes": 13088,
+    "sha256": "d29271b4d9cb81fe88a48e8474c917650079d5e9c048a6ec9137c13e8245a1a4"
+   }
+  },
+  {
+   "label": "sem-issafe-callers",
+   "command": "npx -y rea-agents@6.8.0 trace-javascript-semantics trace-semantics-issafe-callers-input.json --format json",
+   "exit": 0,
+   "seconds": 2.4,
+   "output": {
+    "file": "trace-semantics-issafe-callers.json",
+    "bytes": 9243,
+    "sha256": "212f029e445a41fb61875ca6b4a7ad476dd7d7d3d0e668d749964017b7c27c22"
+   }
+  },
+  {
+   "label": "sem-plant-callers",
+   "command": "npx -y rea-agents@6.8.0 trace-javascript-semantics trace-semantics-plant-callers-input.json --format json",
+   "exit": 0,
+   "seconds": 2.5,
+   "output": {
+    "file": "trace-semantics-plant-callers.json",
+    "bytes": 7621,
+    "sha256": "a49d70181eb37dde07df854d62d864e2528d772c72a8d752226d1c00f43ffd9d"
+   }
+  },
+  {
+   "label": "sem-cornerfix-callers",
+   "command": "npx -y rea-agents@6.8.0 trace-javascript-semantics trace-semantics-cornerfix-callers-input.json --format json",
+   "exit": 0,
+   "seconds": 2.1,
+   "output": {
+    "file": "trace-semantics-cornerfix-callers.json",
+    "bytes": 7651,
+    "sha256": "710ccb4b1c912798f94568ed156e87126bb755042ca24dcf4760183397ae7b65"
+   }
+  },
+  {
+   "label": "sem-strength-property",
+   "command": "npx -y rea-agents@6.8.0 trace-javascript-semantics trace-semantics-strength-property-input.json --format json",
+   "exit": 0,
+   "seconds": 2.2,
+   "output": {
+    "file": "trace-semantics-strength-property.json",
+    "bytes": 9932,
+    "sha256": "83e381f7a8a6ab0daa1667036ea94a745308eb5131d05efe2dda1f239f56519c"
+   }
+  },
+  {
+   "label": "sem-bombsmax-property",
+   "command": "npx -y rea-agents@6.8.0 trace-javascript-semantics trace-semantics-bombsmax-property-input.json --format json",
+   "exit": 0,
+   "seconds": 2.4,
+   "output": {
+    "file": "trace-semantics-bombsmax-property.json",
+    "bytes": 17925,
+    "sha256": "ee6a6917c071e4ea781606927ec6484364e163129716fec191dc57d186857fb2"
+   }
+  },
+  {
+   "label": "sem-escapebomb-property",
+   "command": "npx -y rea-agents@6.8.0 trace-javascript-semantics trace-semantics-escapebomb-property-input.json --format json",
+   "exit": 0,
+   "seconds": 2.3,
+   "output": {
+    "file": "trace-semantics-escapebomb-property.json",
+    "bytes": 14007,
+    "sha256": "4ad6d70bdc82b29e6c4a95387157be4da38888da04b4ebe2c2b7b3a959c648af"
+   }
+  },
+  {
+   "label": "sem-exploded-property",
+   "command": "npx -y rea-agents@6.8.0 trace-javascript-semantics trace-semantics-exploded-property-input.json --format json",
+   "exit": 0,
+   "seconds": 2.3,
+   "output": {
+    "file": "trace-semantics-exploded-property.json",
+    "bytes": 18506,
+    "sha256": "e0da4ad5fe0f064f8f45d2ef2a20cf9148048d6a41f09b8244793716868b723c"
+   }
+  }
+ ]
+}

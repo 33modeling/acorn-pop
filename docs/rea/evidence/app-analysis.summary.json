@@ -1,0 +1,976 @@
+{
+ "bg": {
+  "evidence_id": "ev_253920876013d514800a0ade8d74613ba2bf8adb150ca8d8e4971094df43c91e",
+  "statistics": {
+   "relevant_files": 13,
+   "nested_asar_containers": 0,
+   "text_bytes_read": 53303,
+   "invalid_utf8_files": 0,
+   "parsed_javascript_files": 12,
+   "skipped_javascript_files": 0,
+   "visited_ast_nodes": 7963,
+   "findings": 0,
+   "modules": 0,
+   "parse_failures": 0
+  },
+  "application_graph": {
+   "nodes": {
+    "artifact": 2,
+    "javascript-module": 12,
+    "javascript-asset": 12,
+    "unknown": 1
+   },
+   "edges": {
+    "contains": 26
+   },
+   "limitations": [
+    "Caller-selected source analysis leaves 1 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+    "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+    "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+    "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+    "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+    "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+    "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+   ]
+  },
+  "semantic_graph": {
+   "nodes": {
+    "expression": 2809,
+    "function": 105,
+    "property-slot": 212,
+    "binding": 200,
+    "call-site": 366,
+    "parameter": 51,
+    "module": 12,
+    "return-site": 41,
+    "event": 5,
+    "listener": 5,
+    "literal": 3,
+    "timer": 2
+   },
+   "relations": {
+    "defines": 680,
+    "aliases": 1479,
+    "reads-property": 203,
+    "reads": 712,
+    "captures": 46,
+    "writes": 106,
+    "schedules-timer": 2,
+    "writes-property": 72,
+    "registers-listener": 4,
+    "cancels-timer": 1,
+    "calls": 2,
+    "returns-to-call": 1,
+    "removes-listener": 1,
+    "argument-to-parameter": 2
+   },
+   "resolution": {
+    "resolved": 1518,
+    "candidate": 1793
+   },
+   "fingerprints": 105,
+   "unknowns": {
+    "object-flow/ambiguous-target": 929,
+    "data-flow/unknown-value": 376,
+    "call-flow/dynamic-call": 364,
+    "object-flow/dynamic-property": 58,
+    "event/ambiguous-target": 2,
+    "timer/ambiguous-target": 1
+   }
+  },
+  "functions": {
+   "js/GameEngine.js": [
+    {
+     "name": null,
+     "line": 33
+    },
+    {
+     "name": null,
+     "line": 40
+    },
+    {
+     "name": null,
+     "line": 48
+    },
+    {
+     "name": null,
+     "line": 81
+    },
+    {
+     "name": null,
+     "line": 102
+    },
+    {
+     "name": null,
+     "line": 103
+    },
+    {
+     "name": null,
+     "line": 114
+    },
+    {
+     "name": null,
+     "line": 137
+    },
+    {
+     "name": null,
+     "line": 146
+    },
+    {
+     "name": null,
+     "line": 154
+    },
+    {
+     "name": null,
+     "line": 180
+    },
+    {
+     "name": null,
+     "line": 209
+    },
+    {
+     "name": null,
+     "line": 220
+    },
+    {
+     "name": null,
+     "line": 252
+    },
+    {
+     "name": null,
+     "line": 276
+    },
+    {
+     "name": null,
+     "line": 300
+    },
+    {
+     "name": null,
+     "line": 307
+    },
+    {
+     "name": null,
+     "line": 319
+    },
+    {
+     "name": null,
+     "line": 324
+    },
+    {
+     "name": null,
+     "line": 339
+    },
+    {
+     "name": null,
+     "line": 348
+    },
+    {
+     "name": null,
+     "line": 357
+    },
+    {
+     "name": null,
+     "line": 362
+    },
+    {
+     "name": null,
+     "line": 372
+    },
+    {
+     "name": null,
+     "line": 382
+    }
+   ],
+   "js/Entity.js": [
+    {
+     "name": null,
+     "line": 2
+    },
+    {
+     "name": null,
+     "line": 5
+    }
+   ],
+   "js/Bot.js": [
+    {
+     "name": null,
+     "line": 38
+    },
+    {
+     "name": null,
+     "line": 44
+    },
+    {
+     "name": null,
+     "line": 96
+    },
+    {
+     "name": null,
+     "line": 122
+    },
+    {
+     "name": null,
+     "line": 146
+    },
+    {
+     "name": null,
+     "line": 177
+    },
+    {
+     "name": null,
+     "line": 194
+    },
+    {
+     "name": null,
+     "line": 204
+    },
+    {
+     "name": null,
+     "line": 208
+    },
+    {
+     "name": null,
+     "line": 218
+    },
+    {
+     "name": null,
+     "line": 247
+    },
+    {
+     "name": null,
+     "line": 266
+    },
+    {
+     "name": null,
+     "line": 296
+    },
+    {
+     "name": null,
+     "line": 311
+    },
+    {
+     "name": null,
+     "line": 321
+    },
+    {
+     "name": null,
+     "line": 335
+    }
+   ],
+   "js/Menu.js": [
+    {
+     "name": null,
+     "line": 6
+    },
+    {
+     "name": null,
+     "line": 13
+    },
+    {
+     "name": null,
+     "line": 19
+    },
+    {
+     "name": null,
+     "line": 29
+    },
+    {
+     "name": null,
+     "line": 37
+    },
+    {
+     "name": null,
+     "line": 38
+    },
+    {
+     "name": null,
+     "line": 41
+    },
+    {
+     "name": null,
+     "line": 46
+    },
+    {
+     "name": null,
+     "line": 61
+    },
+    {
+     "name": null,
+     "line": 100
+    },
+    {
+     "name": null,
+     "line": 134
+    },
+    {
+     "name": null,
+     "line": 167
+    }
+   ],
+   "js/Player.js": [
+    {
+     "name": null,
+     "line": 56
+    },
+    {
+     "name": null,
+     "line": 99
+    },
+    {
+     "name": null,
+     "line": 103
+    },
+    {
+     "name": null,
+     "line": 125
+    },
+    {
+     "name": null,
+     "line": 133
+    },
+    {
+     "name": null,
+     "line": 201
+    },
+    {
+     "name": null,
+     "line": 243
+    },
+    {
+     "name": null,
+     "line": 250
+    },
+    {
+     "name": null,
+     "line": 278
+    },
+    {
+     "name": null,
+     "line": 302
+    },
+    {
+     "name": null,
+     "line": 320
+    },
+    {
+     "name": null,
+     "line": 333
+    },
+    {
+     "name": null,
+     "line": 346
+    },
+    {
+     "name": null,
+     "line": 352
+    },
+    {
+     "name": null,
+     "line": 365
+    },
+    {
+     "name": null,
+     "line": 368
+    }
+   ],
+   "js/Bomb.js": [
+    {
+     "name": null,
+     "line": 41
+    },
+    {
+     "name": null,
+     "line": 77
+    },
+    {
+     "name": null,
+     "line": 86
+    },
+    {
+     "name": null,
+     "line": 122
+    },
+    {
+     "name": null,
+     "line": 163
+    },
+    {
+     "name": null,
+     "line": 168
+    },
+    {
+     "name": null,
+     "line": 172
+    }
+   ],
+   "js/Bonus.js": [
+    {
+     "name": null,
+     "line": 8
+    },
+    {
+     "name": null,
+     "line": 21
+    }
+   ],
+   "js/core.js": [
+    {
+     "name": null,
+     "line": 6
+    },
+    {
+     "name": null,
+     "line": 7
+    },
+    {
+     "name": null,
+     "line": 10
+    },
+    {
+     "name": null,
+     "line": 13
+    },
+    {
+     "name": null,
+     "line": 27
+    },
+    {
+     "name": null,
+     "line": 28
+    },
+    {
+     "name": "Class",
+     "line": 47
+    }
+   ],
+   "js/Tile.js": [
+    {
+     "name": null,
+     "line": 22
+    },
+    {
+     "name": null,
+     "line": 39
+    },
+    {
+     "name": null,
+     "line": 42
+    }
+   ],
+   "js/Utils.js": [
+    {
+     "name": null,
+     "line": 6
+    },
+    {
+     "name": null,
+     "line": 14
+    },
+    {
+     "name": null,
+     "line": 24
+    },
+    {
+     "name": null,
+     "line": 34
+    }
+   ],
+   "js/InputEngine.js": [
+    {
+     "name": null,
+     "line": 16
+    },
+    {
+     "name": null,
+     "line": 19
+    },
+    {
+     "name": null,
+     "line": 41
+    },
+    {
+     "name": null,
+     "line": 50
+    },
+    {
+     "name": null,
+     "line": 71
+    },
+    {
+     "name": null,
+     "line": 75
+    },
+    {
+     "name": null,
+     "line": 80
+    }
+   ],
+   "js/Fire.js": [
+    {
+     "name": null,
+     "line": 25
+    },
+    {
+     "name": null,
+     "line": 38
+    },
+    {
+     "name": null,
+     "line": 51
+    },
+    {
+     "name": null,
+     "line": 54
+    }
+   ]
+  },
+  "functions_named": 1,
+  "functions_total": 105,
+  "listeners": [
+   {
+    "module": "js/GameEngine.js",
+    "line": 103,
+    "event": "restart",
+    "method": "addListener"
+   },
+   {
+    "module": "js/Player.js",
+    "line": 103,
+    "event": null,
+    "method": "addListener"
+   },
+   {
+    "module": "js/GameEngine.js",
+    "line": 98,
+    "event": "mute",
+    "method": "addListener"
+   },
+   {
+    "module": "js/GameEngine.js",
+    "line": 114,
+    "event": "escape",
+    "method": "addListener"
+   },
+   {
+    "module": "js/GameEngine.js",
+    "line": 349,
+    "event": null,
+    "method": "removeAllListeners"
+   }
+  ],
+  "timers": [
+   {
+    "module": "js/Player.js",
+    "line": 368,
+    "method": "setInterval"
+   },
+   {
+    "module": "js/GameEngine.js",
+    "line": 102,
+    "method": "setTimeout"
+   }
+  ],
+  "state_properties_top": [
+   {
+    "module": "js/Player.js",
+    "name": "x",
+    "slots": 13
+   },
+   {
+    "module": "js/Player.js",
+    "name": "y",
+    "slots": 12
+   },
+   {
+    "module": "js/Menu.js",
+    "name": "y",
+    "slots": 10
+   },
+   {
+    "module": "js/Menu.js",
+    "name": "x",
+    "slots": 10
+   },
+   {
+    "module": "js/Menu.js",
+    "name": "getMeasuredWidth",
+    "slots": 7
+   },
+   {
+    "module": "js/Bot.js",
+    "name": "length",
+    "slots": 6
+   },
+   {
+    "module": "js/Bot.js",
+    "name": "x",
+    "slots": 6
+   },
+   {
+    "module": "js/Utils.js",
+    "name": "x",
+    "slots": 6
+   },
+   {
+    "module": "js/Utils.js",
+    "name": "y",
+    "slots": 6
+   },
+   {
+    "module": "js/Bot.js",
+    "name": "y",
+    "slots": 6
+   },
+   {
+    "module": "js/Player.js",
+    "name": "length",
+    "slots": 4
+   },
+   {
+    "module": "js/GameEngine.js",
+    "name": "bmp",
+    "slots": 3
+   },
+   {
+    "module": "js/Bot.js",
+    "name": "position",
+    "slots": 3
+   },
+   {
+    "module": "js/GameEngine.js",
+    "name": "update",
+    "slots": 3
+   },
+   {
+    "module": "js/Menu.js",
+    "name": "sourceRect",
+    "slots": 3
+   },
+   {
+    "module": "js/Bot.js",
+    "name": "push",
+    "slots": 3
+   },
+   {
+    "module": "js/Menu.js",
+    "name": "addEventListener",
+    "slots": 3
+   },
+   {
+    "module": "js/GameEngine.js",
+    "name": "y",
+    "slots": 3
+   },
+   {
+    "module": "js/Player.js",
+    "name": "position",
+    "slots": 3
+   },
+   {
+    "module": "js/Menu.js",
+    "name": "getMeasuredHeight",
+    "slots": 3
+   },
+   {
+    "module": "js/GameEngine.js",
+    "name": "x",
+    "slots": 3
+   },
+   {
+    "module": "js/Bomb.js",
+    "name": "length",
+    "slots": 2
+   },
+   {
+    "module": "js/Bot.js",
+    "name": "alive",
+    "slots": 2
+   },
+   {
+    "module": "js/Player.js",
+    "name": "right",
+    "slots": 2
+   },
+   {
+    "module": "js/GameEngine.js",
+    "name": "push",
+    "slots": 2
+   },
+   {
+    "module": "js/Bomb.js",
+    "name": "position",
+    "slots": 2
+   },
+   {
+    "module": "js/GameEngine.js",
+    "name": "top",
+    "slots": 2
+   },
+   {
+    "module": "js/Menu.js",
+    "name": "text",
+    "slots": 2
+   },
+   {
+    "module": "js/InputEngine.js",
+    "name": "keyCode",
+    "slots": 2
+   },
+   {
+    "module": "js/GameEngine.js",
+    "name": "material",
+    "slots": 2
+   },
+   {
+    "module": "js/Player.js",
+    "name": "bottom",
+    "slots": 2
+   },
+   {
+    "module": "js/GameEngine.js",
+    "name": "right",
+    "slots": 2
+   },
+   {
+    "module": "js/GameEngine.js",
+    "name": "bottom",
+    "slots": 2
+   },
+   {
+    "module": "js/GameEngine.js",
+    "name": "left",
+    "slots": 2
+   },
+   {
+    "module": "js/Menu.js",
+    "name": "color",
+    "slots": 2
+   },
+   {
+    "module": "js/InputEngine.js",
+    "name": "preventDefault",
+    "slots": 2
+   },
+   {
+    "module": "js/Player.js",
+    "name": "top",
+    "slots": 2
+   },
+   {
+    "module": "js/Player.js",
+    "name": "left",
+    "slots": 2
+   },
+   {
+    "module": "js/core.js",
+    "name": "test",
+    "slots": 1
+   },
+   {
+    "module": "js/Menu.js",
+    "name": "setMode",
+    "slots": 1
+   },
+   {
+    "module": "js/core.js",
+    "name": "prototype",
+    "slots": 1
+   },
+   {
+    "module": "js/Player.js",
+    "name": "setExplodeListener",
+    "slots": 1
+   },
+   {
+    "module": "js/GameEngine.js",
+    "name": "length",
+    "slots": 1
+   },
+   {
+    "module": "js/Tile.js",
+    "name": "y",
+    "slots": 1
+   },
+   {
+    "module": "js/Utils.js",
+    "name": "comparePositions",
+    "slots": 1
+   },
+   {
+    "module": "js/Bomb.js",
+    "name": "push",
+    "slots": 1
+   },
+   {
+    "module": "js/Bot.js",
+    "name": "bombs",
+    "slots": 1
+   },
+   {
+    "module": "js/Bot.js",
+    "name": "getDangerPositions",
+    "slots": 1
+   },
+   {
+    "module": "js/GameEngine.js",
+    "name": "loadManifest",
+    "slots": 1
+   },
+   {
+    "module": "js/Player.js",
+    "name": "bombs",
+    "slots": 1
+   },
+   {
+    "module": "js/GameEngine.js",
+    "name": "bonusesImg",
+    "slots": 1
+   },
+   {
+    "module": "js/Player.js",
+    "name": "push",
+    "slots": 1
+   },
+   {
+    "module": "js/Bot.js",
+    "name": "setExplodeListener",
+    "slots": 1
+   },
+   {
+    "module": "js/Bomb.js",
+    "name": "x",
+    "slots": 1
+   },
+   {
+    "module": "js/Player.js",
+    "name": "alpha",
+    "slots": 1
+   },
+   {
+    "module": "js/GameEngine.js",
+    "name": "position",
+    "slots": 1
+   },
+   {
+    "module": "js/Player.js",
+    "name": "bmp",
+    "slots": 1
+   },
+   {
+    "module": "js/Utils.js",
+    "name": "convertToBitmapPosition",
+    "slots": 1
+   },
+   {
+    "module": "js/Bot.js",
+    "name": "bmp",
+    "slots": 1
+   },
+   {
+    "module": "js/Bomb.js",
+    "name": "escapeBomb",
+    "slots": 1
+   },
+   {
+    "module": "js/GameEngine.js",
+    "name": "playerBoyImg",
+    "slots": 1
+   },
+   {
+    "module": "js/GameEngine.js",
+    "name": "bombImg",
+    "slots": 1
+   },
+   {
+    "module": "js/Utils.js",
+    "name": "splice",
+    "slots": 1
+   },
+   {
+    "module": "js/GameEngine.js",
+    "name": "addEventListener",
+    "slots": 1
+   },
+   {
+    "module": "js/core.js",
+    "name": "constructor",
+    "slots": 1
+   },
+   {
+    "module": "js/GameEngine.js",
+    "name": "playerGirlImg",
+    "slots": 1
+   },
+   {
+    "module": "js/GameEngine.js",
+    "name": "getResult",
+    "slots": 1
+   },
+   {
+    "module": "js/Bonus.js",
+    "name": "y",
+    "slots": 1
+   },
+   {
+    "module": "js/GameEngine.js",
+    "name": "id",
+    "slots": 1
+   },
+   {
+    "module": "js/Fire.js",
+    "name": "y",
+    "slots": 1
+   },
+   {
+    "module": "js/Utils.js",
+    "name": "convertToEntityPosition",
+    "slots": 1
+   },
+   {
+    "module": "js/Bonus.js",
+    "name": "x",
+    "slots": 1
+   },
+   {
+    "module": "js/Player.js",
+    "name": "type",
+    "slots": 1
+   },
+   {
+    "module": "js/Fire.js",
+    "name": "remove",
+    "slots": 1
+   },
+   {
+    "module": "js/Player.js",
+    "name": "exploded",
+    "slots": 1
+   },
+   {
+    "module": "js/core.js",
+    "name": "extend",
+    "slots": 1
+   },
+   {
+    "module": "js/core.js",
+    "name": "apply",
+    "slots": 1
+   },
+   {
+    "module": "js/Bomb.js",
+    "name": "explode",
+    "slots": 1
+   },
+   {
+    "module": "js/Bot.js",
+    "name": "wait",
+    "slots": 1
+   },
+   {
+    "module": "js/Bomb.js",
+    "name": "setVolume",
+    "slots": 1
+   }
+  ]
+ }
+}

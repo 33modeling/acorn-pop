@@ -1,0 +1,344 @@
+{
+ "feature-bomb": {
+  "kind": "trace-application-feature",
+  "keys": [
+   "coverage",
+   "direction",
+   "evidence_links",
+   "graph",
+   "limitations",
+   "native_handoffs",
+   "paths",
+   "seed",
+   "seed_matches",
+   "source_evidence_id",
+   "source_graph_id",
+   "summary",
+   "trace_id"
+  ],
+  "summary": {
+   "matched_seeds": 2,
+   "traced_nodes": 27,
+   "traced_edges": 26,
+   "terminal_paths": 1,
+   "native_handoffs": 0,
+   "observed_facts": 52,
+   "inferred_facts": 0,
+   "unknown_facts": 0,
+   "unavailable_facts": 1
+  },
+  "coverage": {
+   "status": "partial",
+   "source_graph_status": "partial",
+   "total_seed_matches": 2
+  },
+  "limitations": [
+   "A trace reports graph relationships, not proof that code executed or that a feature is reachable in every state.",
+   "Native handoffs never open a binary or invoke a provider automatically; snapshot reuse remains provider/profile/target exact.",
+   "Static, native, passive-runtime, inferred, and unknown facts retain their original authority in the returned graph.",
+   "The source application graph is incomplete; unmatched seeds and frontiers remain unknown."
+  ]
+ },
+ "feature-bot": {
+  "kind": "trace-application-feature",
+  "keys": [
+   "coverage",
+   "direction",
+   "evidence_links",
+   "graph",
+   "limitations",
+   "native_handoffs",
+   "paths",
+   "seed",
+   "seed_matches",
+   "source_evidence_id",
+   "source_graph_id",
+   "summary",
+   "trace_id"
+  ],
+  "summary": {
+   "matched_seeds": 2,
+   "traced_nodes": 27,
+   "traced_edges": 26,
+   "terminal_paths": 1,
+   "native_handoffs": 0,
+   "observed_facts": 52,
+   "inferred_facts": 0,
+   "unknown_facts": 0,
+   "unavailable_facts": 1
+  },
+  "coverage": {
+   "status": "partial",
+   "source_graph_status": "partial",
+   "total_seed_matches": 2
+  },
+  "limitations": [
+   "A trace reports graph relationships, not proof that code executed or that a feature is reachable in every state.",
+   "Native handoffs never open a binary or invoke a provider automatically; snapshot reuse remains provider/profile/target exact.",
+   "Static, native, passive-runtime, inferred, and unknown facts retain their original authority in the returned graph.",
+   "The source application graph is incomplete; unmatched seeds and frontiers remain unknown."
+  ]
+ },
+ "semantics-bombsmax-property": {
+  "seed": {
+   "kind": "property",
+   "name": "bombsMax"
+  },
+  "direction": "forward-influence",
+  "status": "ambiguous",
+  "summary": {
+   "total_seed_matches": 5,
+   "traversed_nodes": 6,
+   "traversed_relations": 1,
+   "traversed_functions": 5,
+   "traversed_modules": 2,
+   "relevant_unknowns": 5
+  },
+  "seed_locations": [
+   "js/Bot.js:212",
+   "js/Bot.js:304",
+   "js/Player.js:337"
+  ],
+  "reached_locations": [
+   "js/Bot.js:212",
+   "js/Bot.js:304",
+   "js/Player.js:119",
+   "js/Player.js:337"
+  ],
+  "relations": {
+   "reads-property/candidate": 1
+  },
+  "unknowns": {
+   "object-flow/ambiguous-target": 5
+  }
+ },
+ "semantics-cornerfix-callers": {
+  "seed": {
+   "kind": "property",
+   "name": "getCornerFix"
+  },
+  "direction": "forward-influence",
+  "status": "found",
+  "summary": {
+   "total_seed_matches": 1,
+   "traversed_nodes": 1,
+   "traversed_relations": 0,
+   "traversed_functions": 1,
+   "traversed_modules": 1,
+   "relevant_unknowns": 1
+  },
+  "seed_locations": [
+   "js/Player.js:169"
+  ],
+  "reached_locations": [
+   "js/Player.js:169"
+  ],
+  "relations": {},
+  "unknowns": {
+   "object-flow/ambiguous-target": 1
+  }
+ },
+ "semantics-danger-callers": {
+  "seed": {
+   "kind": "property",
+   "name": "getDangerPositions"
+  },
+  "direction": "forward-influence",
+  "status": "ambiguous",
+  "summary": {
+   "total_seed_matches": 2,
+   "traversed_nodes": 3,
+   "traversed_relations": 1,
+   "traversed_functions": 2,
+   "traversed_modules": 2,
+   "relevant_unknowns": 2
+  },
+  "seed_locations": [
+   "js/Bomb.js:95"
+  ],
+  "reached_locations": [
+   "js/Bomb.js:95",
+   "js/Bot.js:324"
+  ],
+  "relations": {
+   "reads-property/candidate": 1
+  },
+  "unknowns": {
+   "object-flow/ambiguous-target": 2
+  }
+ },
+ "semantics-escapebomb-property": {
+  "seed": {
+   "kind": "property",
+   "name": "escapeBomb"
+  },
+  "direction": "forward-influence",
+  "status": "ambiguous",
+  "summary": {
+   "total_seed_matches": 4,
+   "traversed_nodes": 4,
+   "traversed_relations": 0,
+   "traversed_functions": 2,
+   "traversed_modules": 2,
+   "relevant_unknowns": 4
+  },
+  "seed_locations": [
+   "js/Player.js:286",
+   "js/Player.js:295",
+   "js/Player.js:296"
+  ],
+  "reached_locations": [
+   "js/Player.js:286",
+   "js/Player.js:295",
+   "js/Player.js:296"
+  ],
+  "relations": {},
+  "unknowns": {
+   "object-flow/ambiguous-target": 4
+  }
+ },
+ "semantics-explode-callers": {
+  "seed": {
+   "kind": "property",
+   "name": "explode"
+  },
+  "direction": "forward-influence",
+  "status": "ambiguous",
+  "summary": {
+   "total_seed_matches": 2,
+   "traversed_nodes": 3,
+   "traversed_relations": 1,
+   "traversed_functions": 2,
+   "traversed_modules": 1,
+   "relevant_unknowns": 2
+  },
+  "seed_locations": [
+   "js/Bomb.js:82"
+  ],
+  "reached_locations": [
+   "js/Bomb.js:110",
+   "js/Bomb.js:82"
+  ],
+  "relations": {
+   "reads-property/candidate": 1
+  },
+  "unknowns": {
+   "object-flow/ambiguous-target": 2
+  }
+ },
+ "semantics-exploded-property": {
+  "seed": {
+   "kind": "property",
+   "name": "exploded"
+  },
+  "direction": "forward-influence",
+  "status": "ambiguous",
+  "summary": {
+   "total_seed_matches": 4,
+   "traversed_nodes": 6,
+   "traversed_relations": 2,
+   "traversed_functions": 3,
+   "traversed_modules": 2,
+   "relevant_unknowns": 4
+  },
+  "seed_locations": [
+   "js/Bomb.js:78",
+   "js/Bomb.js:87"
+  ],
+  "reached_locations": [
+   "js/Bomb.js:108",
+   "js/Bomb.js:78",
+   "js/Bomb.js:87",
+   "js/Player.js:308"
+  ],
+  "relations": {
+   "reads-property/candidate": 2
+  },
+  "unknowns": {
+   "object-flow/ambiguous-target": 4
+  }
+ },
+ "semantics-issafe-callers": {
+  "seed": {
+   "kind": "property",
+   "name": "isSafe"
+  },
+  "direction": "forward-influence",
+  "status": "ambiguous",
+  "summary": {
+   "total_seed_matches": 2,
+   "traversed_nodes": 2,
+   "traversed_relations": 0,
+   "traversed_functions": 2,
+   "traversed_modules": 1,
+   "relevant_unknowns": 2
+  },
+  "seed_locations": [
+   "js/Bot.js:165",
+   "js/Bot.js:71"
+  ],
+  "reached_locations": [
+   "js/Bot.js:165",
+   "js/Bot.js:71"
+  ],
+  "relations": {},
+  "unknowns": {
+   "object-flow/ambiguous-target": 2
+  }
+ },
+ "semantics-plant-callers": {
+  "seed": {
+   "kind": "property",
+   "name": "plantBomb"
+  },
+  "direction": "forward-influence",
+  "status": "found",
+  "summary": {
+   "total_seed_matches": 1,
+   "traversed_nodes": 1,
+   "traversed_relations": 0,
+   "traversed_functions": 1,
+   "traversed_modules": 1,
+   "relevant_unknowns": 1
+  },
+  "seed_locations": [
+   "js/Bot.js:66"
+  ],
+  "reached_locations": [
+   "js/Bot.js:66"
+  ],
+  "relations": {},
+  "unknowns": {
+   "object-flow/ambiguous-target": 1
+  }
+ },
+ "semantics-strength-property": {
+  "seed": {
+   "kind": "property",
+   "name": "strength"
+  },
+  "direction": "forward-influence",
+  "status": "ambiguous",
+  "summary": {
+   "total_seed_matches": 2,
+   "traversed_nodes": 2,
+   "traversed_relations": 0,
+   "traversed_functions": 2,
+   "traversed_modules": 1,
+   "relevant_unknowns": 3
+  },
+  "seed_locations": [
+   "js/Bomb.js:134",
+   "js/Bomb.js:42"
+  ],
+  "reached_locations": [
+   "js/Bomb.js:134",
+   "js/Bomb.js:42"
+  ],
+  "relations": {},
+  "unknowns": {
+   "object-flow/ambiguous-target": 2,
+   "data-flow/unknown-value": 1
+  }
+ }
+}
