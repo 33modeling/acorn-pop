@@ -1,319 +1,319 @@
 {
-  "schema": "rea-analysis/v1",
-  "id": "html5-bombergirl-acorn-pop",
-  "title": "html5-bombergirl → 도토리 펑",
-  "analyzed_at": "2026-11-26",
-  "app": {
-    "slug": "acorn-pop",
-    "name": "도토리 펑 (Acorn Pop)",
-    "repo": "33modeling/acorn-pop",
-    "url": "https://3modeling.pages.dev/acorn-pop/"
+ "schema": "rea-analysis/v1",
+ "id": "html5-bombergirl-acorn-pop",
+ "title": "html5-bombergirl → 도토리 펑",
+ "analyzed_at": "2026-11-26",
+ "app": {
+  "slug": "acorn-pop",
+  "name": "도토리 펑 (Acorn Pop)",
+  "repo": "33modeling/acorn-pop",
+  "url": "https://3modeling.pages.dev/acorn-pop/"
+ },
+ "target": {
+  "name": "MattSkala/html5-bombergirl",
+  "source_url": "https://github.com/MattSkala/html5-bombergirl",
+  "commit": "0044a17d794bbfe05841a04328ccfd07146cb1b7",
+  "license": "MIT (LICENSE.txt, Copyright 2018 Matous Skala) — 그래도 코드는 옮기지 않음",
+  "scope": "js/ 12개 파일과 index.html·README.md·LICENSE.txt 만 얕게 받음(약 60 KB). img/·sound/·lib/(CreateJS) 는 받지 않음. 빌드·설치·실행 없음"
+ },
+ "rea": {
+  "version": "6.8.0",
+  "runs": [
+   {
+    "command": "import-reference-source",
+    "target": "ref-bg",
+    "exit": 0,
+    "seconds": 1.9,
+    "result": "4,175 bytes, sha256 e791488b8c0d"
+   },
+   {
+    "command": "import-reference-source",
+    "target": "ref-bg-summary",
+    "exit": 0,
+    "seconds": 2.0,
+    "result": "3,740 bytes, sha256 d06fc59ac7b0"
+   },
+   {
+    "command": "analyze-javascript-application",
+    "target": "app-bg",
+    "exit": 0,
+    "seconds": 4.8,
+    "result": "6,697,073 bytes, sha256 04071975c4ad"
+   },
+   {
+    "command": "inspect-analysis-view",
+    "target": "view-bg-summary",
+    "exit": 0,
+    "seconds": 2.3,
+    "result": "11,642 bytes, sha256 4668bdc656d8"
+   },
+   {
+    "command": "inspect-analysis-view",
+    "target": "view-bg-modules",
+    "exit": 0,
+    "seconds": 2.5,
+    "result": "13,959 bytes, sha256 189de5ce85cd"
+   },
+   {
+    "command": "inspect-analysis-view",
+    "target": "view-bg-facts",
+    "exit": 0,
+    "seconds": 2.7,
+    "result": "26,051 bytes, sha256 a354f073ac04"
+   },
+   {
+    "command": "trace-application-feature",
+    "target": "feature-bomb",
+    "exit": 0,
+    "seconds": 2.6,
+    "result": "89,637 bytes, sha256 1c92ad9ce7f7"
+   },
+   {
+    "command": "trace-application-feature",
+    "target": "feature-bot",
+    "exit": 0,
+    "seconds": 2.7,
+    "result": "89,635 bytes, sha256 642b70fc34bb"
+   },
+   {
+    "command": "trace-javascript-semantics",
+    "target": "sem-explode-callers",
+    "exit": 0,
+    "seconds": 2.9,
+    "result": "11,673 bytes, sha256 6fba3fa42033"
+   },
+   {
+    "command": "trace-javascript-semantics",
+    "target": "sem-danger-callers",
+    "exit": 0,
+    "seconds": 2.6,
+    "result": "13,088 bytes, sha256 d29271b4d9cb"
+   },
+   {
+    "command": "trace-javascript-semantics",
+    "target": "sem-issafe-callers",
+    "exit": 0,
+    "seconds": 2.4,
+    "result": "9,243 bytes, sha256 212f029e445a"
+   },
+   {
+    "command": "trace-javascript-semantics",
+    "target": "sem-plant-callers",
+    "exit": 0,
+    "seconds": 2.5,
+    "result": "7,621 bytes, sha256 a49d70181eb3"
+   },
+   {
+    "command": "trace-javascript-semantics",
+    "target": "sem-cornerfix-callers",
+    "exit": 0,
+    "seconds": 2.1,
+    "result": "7,651 bytes, sha256 710ccb4b1c91"
+   },
+   {
+    "command": "trace-javascript-semantics",
+    "target": "sem-strength-property",
+    "exit": 0,
+    "seconds": 2.2,
+    "result": "9,932 bytes, sha256 83e381f7a8a6"
+   },
+   {
+    "command": "trace-javascript-semantics",
+    "target": "sem-bombsmax-property",
+    "exit": 0,
+    "seconds": 2.4,
+    "result": "17,925 bytes, sha256 ee6a6917c071"
+   },
+   {
+    "command": "trace-javascript-semantics",
+    "target": "sem-escapebomb-property",
+    "exit": 0,
+    "seconds": 2.3,
+    "result": "14,007 bytes, sha256 4ad6d70bdc82"
+   },
+   {
+    "command": "trace-javascript-semantics",
+    "target": "sem-exploded-property",
+    "exit": 0,
+    "seconds": 2.3,
+    "result": "18,506 bytes, sha256 e0da4ad5fe0f"
+   }
+  ]
+ },
+ "features": [
+  {
+   "name": "십자 폭발 전파",
+   "upstream_how": "Bomb.js getDangerPositions: 네 방향으로 strength 칸, wall 이면 그 칸 앞에서 멈춤, wood 는 그 칸까지 태우고 멈춤",
+   "evidence": "semantics-strength-property(Bomb.js:42·134), semantics-danger-callers(Bomb.js:95, Bot.js:324)",
+   "status": "implemented",
+   "commits": [
+    "b4c3c04"
+   ],
+   "note": "blast.js blastCells. 같은 규칙에 바닥 아이템도 태우고 멈추게 더함. 끝 칸·팔·가운데 모양을 따로 기록해 그림에 씀"
   },
-  "target": {
-    "name": "MattSkala/html5-bombergirl",
-    "source_url": "https://github.com/MattSkala/html5-bombergirl",
-    "commit": "0044a17d794bbfe05841a04328ccfd07146cb1b7",
-    "license": "MIT (LICENSE.txt, Copyright 2018 Matous Skala) — 그래도 코드는 옮기지 않음",
-    "scope": "js/ 12개 파일과 index.html·README.md·LICENSE.txt 만 얕게 받음(약 60 KB). img/·sound/·lib/(CreateJS) 는 받지 않음. 빌드·설치·실행 없음"
+  {
+   "name": "연쇄 폭발",
+   "upstream_how": "Bomb.explode 가 불꽃 칸마다 그 칸의 안 터진 폭탄을 찾아 바로 explode 를 재귀 호출(exploded 깃발로 한 번만)",
+   "evidence": "semantics-explode-callers(Bomb.js:82·110), semantics-exploded-property(Bomb.js:78·87·108)",
+   "status": "implemented",
+   "commits": [
+    "b4c3c04"
+   ],
+   "note": "재귀 대신 대기열(resolveChain)로 같은 틱에 모두 풀고 연쇄 깊이를 셈. 덤불은 다 계산한 뒤 한꺼번에 부숴 두 불꽃이 같은 덤불 뒤로 번지지 않게 함"
   },
-  "rea": {
-    "version": "6.8.0",
-    "runs": [
-      {
-        "command": "import-reference-source",
-        "target": "ref-bg",
-        "exit": 0,
-        "seconds": 1.9,
-        "result": "4,175 bytes, sha256 e791488b8c0d"
-      },
-      {
-        "command": "import-reference-source",
-        "target": "ref-bg-summary",
-        "exit": 0,
-        "seconds": 2.0,
-        "result": "3,740 bytes, sha256 d06fc59ac7b0"
-      },
-      {
-        "command": "analyze-javascript-application",
-        "target": "app-bg",
-        "exit": 0,
-        "seconds": 4.8,
-        "result": "6,697,073 bytes, sha256 04071975c4ad"
-      },
-      {
-        "command": "inspect-analysis-view",
-        "target": "view-bg-summary",
-        "exit": 0,
-        "seconds": 2.3,
-        "result": "11,642 bytes, sha256 4668bdc656d8"
-      },
-      {
-        "command": "inspect-analysis-view",
-        "target": "view-bg-modules",
-        "exit": 0,
-        "seconds": 2.5,
-        "result": "13,959 bytes, sha256 189de5ce85cd"
-      },
-      {
-        "command": "inspect-analysis-view",
-        "target": "view-bg-facts",
-        "exit": 0,
-        "seconds": 2.7,
-        "result": "26,051 bytes, sha256 a354f073ac04"
-      },
-      {
-        "command": "trace-application-feature",
-        "target": "feature-bomb",
-        "exit": 0,
-        "seconds": 2.6,
-        "result": "89,637 bytes, sha256 1c92ad9ce7f7"
-      },
-      {
-        "command": "trace-application-feature",
-        "target": "feature-bot",
-        "exit": 0,
-        "seconds": 2.7,
-        "result": "89,635 bytes, sha256 642b70fc34bb"
-      },
-      {
-        "command": "trace-javascript-semantics",
-        "target": "sem-explode-callers",
-        "exit": 0,
-        "seconds": 2.9,
-        "result": "11,673 bytes, sha256 6fba3fa42033"
-      },
-      {
-        "command": "trace-javascript-semantics",
-        "target": "sem-danger-callers",
-        "exit": 0,
-        "seconds": 2.6,
-        "result": "13,088 bytes, sha256 d29271b4d9cb"
-      },
-      {
-        "command": "trace-javascript-semantics",
-        "target": "sem-issafe-callers",
-        "exit": 0,
-        "seconds": 2.4,
-        "result": "9,243 bytes, sha256 212f029e445a"
-      },
-      {
-        "command": "trace-javascript-semantics",
-        "target": "sem-plant-callers",
-        "exit": 0,
-        "seconds": 2.5,
-        "result": "7,621 bytes, sha256 a49d70181eb3"
-      },
-      {
-        "command": "trace-javascript-semantics",
-        "target": "sem-cornerfix-callers",
-        "exit": 0,
-        "seconds": 2.1,
-        "result": "7,651 bytes, sha256 710ccb4b1c91"
-      },
-      {
-        "command": "trace-javascript-semantics",
-        "target": "sem-strength-property",
-        "exit": 0,
-        "seconds": 2.2,
-        "result": "9,932 bytes, sha256 83e381f7a8a6"
-      },
-      {
-        "command": "trace-javascript-semantics",
-        "target": "sem-bombsmax-property",
-        "exit": 0,
-        "seconds": 2.4,
-        "result": "17,925 bytes, sha256 ee6a6917c071"
-      },
-      {
-        "command": "trace-javascript-semantics",
-        "target": "sem-escapebomb-property",
-        "exit": 0,
-        "seconds": 2.3,
-        "result": "14,007 bytes, sha256 4ad6d70bdc82"
-      },
-      {
-        "command": "trace-javascript-semantics",
-        "target": "sem-exploded-property",
-        "exit": 0,
-        "seconds": 2.3,
-        "result": "18,506 bytes, sha256 e0da4ad5fe0f"
-      }
-    ]
+  {
+   "name": "놓은 폭탄에서 비켜나기",
+   "upstream_how": "Bomb.init 이 그 칸에 서 있던 사람마다 escapeBomb 을 붙이고, Player 충돌 검사에서 그 폭탄만 통과",
+   "evidence": "semantics-escapebomb-property(Player.js:286·295·296)",
+   "status": "implemented",
+   "commits": [
+    "b4c3c04"
+   ],
+   "note": "폭탄마다 passers 집합. 벗어나면 빠지고 다시 못 들어감. 시험 game.test.mjs"
   },
-  "features": [
-    {
-      "name": "십자 폭발 전파",
-      "upstream_how": "Bomb.js getDangerPositions: 네 방향으로 strength 칸, wall 이면 그 칸 앞에서 멈춤, wood 는 그 칸까지 태우고 멈춤",
-      "evidence": "semantics-strength-property(Bomb.js:42·134), semantics-danger-callers(Bomb.js:95, Bot.js:324)",
-      "status": "implemented",
-      "commits": [
-        "b4c3c04"
-      ],
-      "note": "blast.js blastCells. 같은 규칙에 바닥 아이템도 태우고 멈추게 더함. 끝 칸·팔·가운데 모양을 따로 기록해 그림에 씀"
-    },
-    {
-      "name": "연쇄 폭발",
-      "upstream_how": "Bomb.explode 가 불꽃 칸마다 그 칸의 안 터진 폭탄을 찾아 바로 explode 를 재귀 호출(exploded 깃발로 한 번만)",
-      "evidence": "semantics-explode-callers(Bomb.js:82·110), semantics-exploded-property(Bomb.js:78·87·108)",
-      "status": "implemented",
-      "commits": [
-        "b4c3c04"
-      ],
-      "note": "재귀 대신 대기열(resolveChain)로 같은 틱에 모두 풀고 연쇄 깊이를 셈. 덤불은 다 계산한 뒤 한꺼번에 부숴 두 불꽃이 같은 덤불 뒤로 번지지 않게 함"
-    },
-    {
-      "name": "놓은 폭탄에서 비켜나기",
-      "upstream_how": "Bomb.init 이 그 칸에 서 있던 사람마다 escapeBomb 을 붙이고, Player 충돌 검사에서 그 폭탄만 통과",
-      "evidence": "semantics-escapebomb-property(Player.js:286·295·296)",
-      "status": "implemented",
-      "commits": [
-        "b4c3c04"
-      ],
-      "note": "폭탄마다 passers 집합. 벗어나면 빠지고 다시 못 들어감. 시험 game.test.mjs"
-    },
-    {
-      "name": "모퉁이 미끄러짐",
-      "upstream_how": "Player.getCornerFix: 막힌 방향으로 누를 때 옆 칸이 비어 있으면 그쪽으로 밀어 줌",
-      "evidence": "semantics-cornerfix-callers(Player.js:169)",
-      "status": "implemented",
-      "commits": [
-        "b4c3c04"
-      ],
-      "note": "movePlayer: 지금 줄 앞이 비면 줄 가운데로, 막혔고 0.28칸 넘게 걸쳤으면 옆 줄로"
-    },
-    {
-      "name": "폭탄 수·화력·속도 아이템",
-      "upstream_how": "Bonus 종류 speed·bomb·fire, Player.applyBonus 가 bombsMax·bombStrength·velocity 를 올림",
-      "evidence": "semantics-bombsmax-property(Bot.js:212·304, Player.js:119·337)",
-      "status": "implemented",
-      "commits": [
-        "b4c3c04"
-      ],
-      "note": "불씨·도토리 주머니·바람 깃털 + 잎사귀 방패·모래시계(새로 더함). 상한 8·8·4"
-    },
-    {
-      "name": "아이템이 불꽃에 탐",
-      "upstream_how": "없음(덤불이 사라질 때 보너스가 나오고 불꽃과 무관)",
-      "evidence": "app-analysis.summary.json(Bonus.js 함수 목록)",
-      "status": "implemented",
-      "commits": [
-        "b4c3c04"
-      ],
-      "note": "바닥에 나온 아이템은 다음 불꽃에 타고 불꽃을 멈춤(새 규칙)"
-    },
-    {
-      "name": "컴퓨터 상대: 위험 칸 피하기",
-      "upstream_how": "Bot.isSafe 가 모든 폭탄의 getDangerPositions 를 모아 갈 칸이 안전한지 봄",
-      "evidence": "semantics-issafe-callers(Bot.js:71·165), semantics-danger-callers(Bot.js:324)",
-      "status": "implemented",
-      "commits": [
-        "b4c3c04"
-      ],
-      "note": "dangerMap 이 칸마다 남은 초를 계산하고 연쇄로 앞당겨지는 시간까지 반영. 도착 시각보다 늦게 타는 칸만 밟는 BFS"
-    },
-    {
-      "name": "컴퓨터 상대: 폭탄 놓기 판단",
-      "upstream_how": "Bot.plantBomb: 옆에 나무 상자(getNearWood)가 있거나 사람을 죽일 수 있으면(wantKillPlayer) 놓음",
-      "evidence": "semantics-plant-callers(Bot.js:66)",
-      "status": "implemented",
-      "commits": [
-        "b4c3c04"
-      ],
-      "note": "놓기 전에 가짜 폭탄을 더한 위험 지도로 피할 곳이 6칸 안에 있는지 확인. 실력 4단계(생각 간격·공격성)"
-    },
-    {
-      "name": "적 종류별 움직임",
-      "upstream_how": "없음(적은 Bot 하나뿐)",
-      "evidence": "app-analysis.summary.json(Bot.js 함수 목록)",
-      "status": "implemented",
-      "commits": [
-        "b4c3c04"
-      ],
-      "note": "6종: 아무 데나·곧게 뛰다 쉼·덤불 뚫기·쫓기·불꽃 피하기·두 번 맞기. 판 시작 2초 졸기"
-    },
-    {
-      "name": "대장 5종",
-      "upstream_how": "없음",
-      "evidence": "—",
-      "status": "implemented",
-      "commits": [
-        "b4c3c04"
-      ],
-      "note": "졸개 부르기·뛰어서 내려앉기(공중 무적)·덤불 뚫고 돌진·얼음 덤불 쌓기·불씨 폭탄 낳기(자기 폭탄엔 무적)"
-    },
-    {
-      "name": "출구와 판 35개",
-      "upstream_how": "없음(한 판짜리 대전)",
-      "evidence": "—",
-      "status": "implemented",
-      "commits": [
-        "b4c3c04"
-      ],
-      "note": "출구는 덤불 속, 적을 다 쓰러뜨리면 열림. 무늬 7종으로 판 생성, 길이 끊기는 바위는 놓지 않음"
-    },
-    {
-      "name": "같은 화면 대전",
-      "upstream_how": "Player 두 명 키 설정(controls), 봇과 함께 4명",
-      "evidence": "app-analysis.summary.json(listeners: InputEngine addListener)",
-      "status": "implemented",
-      "commits": [
-        "b4c3c04"
-      ],
-      "note": "사람 2명 또는 컴퓨터 섞어 최대 4명, 세 판 두 번 먼저 등, 1분 남으면 바위 조이기"
-    },
-    {
-      "name": "저장",
-      "upstream_how": "없음",
-      "evidence": "—",
-      "status": "implemented",
-      "commits": [
-        "b4c3c04"
-      ],
-      "note": "localStorage(try/catch): 연 판·깬 판·최고 점수·능력·대전 설정"
-    },
-    {
-      "name": "터치·게임패드",
-      "upstream_how": "없음(키보드만)",
-      "evidence": "app-analysis.summary.json(listeners)",
-      "status": "implemented",
-      "commits": [
-        "b4c3c04"
-      ],
-      "note": "미끄러뜨리는 방향 패드·도토리 단추(44px 이상), 1·2번 패드"
-    },
-    {
-      "name": "발로 차서 폭탄 밀기",
-      "upstream_how": "없음",
-      "evidence": "—",
-      "status": "deferred",
-      "commits": [],
-      "note": "장르에 흔하지만 이번 범위 밖"
-    },
-    {
-      "name": "원격 기폭",
-      "upstream_how": "없음",
-      "evidence": "—",
-      "status": "deferred",
-      "commits": [],
-      "note": "이번 범위 밖"
-    },
-    {
-      "name": "소리 파일·스프라이트",
-      "upstream_how": "CreateJS 스프라이트·사운드 파일",
-      "evidence": "—",
-      "status": "not-copied",
-      "commits": [],
-      "note": "그림은 Canvas 코드, 소리는 WebAudio 로 새로 만듦"
-    }
-  ],
-  "limitations": [
-    "모듈 시스템이 없는 전역 <script> 앱이라 import-reference-source 관계 0, 앱 분석 modules 0",
-    "Class.extend({ 이름: function(){} }) 안 메서드가 이름 없는 함수로 남아 105개 중 1개(Class)만 이름이 잡힘. 그래서 함수 지문으로 호출자 추적을 못 하고 같은 이름의 속성 추적으로 대신함",
-    "의미 관계 3,311개 중 candidate 1,793, unknown 1,730(object-flow/ambiguous-target 929). 속성 추적 9개 중 7개가 ambiguous",
-    "모듈 기준 trace-application-feature 는 Bomb.js·Bot.js 모두 같은 27노드(그래프 전체)로 퍼져 기능 단위로 좁혀지지 않음",
-    "프레임 수·타이머 값(폭탄 2초, 속도 2px) 같은 수치는 관계만 보여 주고 값은 알려 주지 않음 — 코드를 직접 읽어 확인",
-    "실행하지 않는 정적 분석이라 손맛은 볼 수 없음 — 도토리 펑은 자동 플레이·판 검사 시험으로 확인"
-  ],
-  "doc": "docs/rea/html5-bombergirl-analysis.md",
-  "evidence_dir": "docs/rea/evidence"
+  {
+   "name": "모퉁이 미끄러짐",
+   "upstream_how": "Player.getCornerFix: 막힌 방향으로 누를 때 옆 칸이 비어 있으면 그쪽으로 밀어 줌",
+   "evidence": "semantics-cornerfix-callers(Player.js:169)",
+   "status": "implemented",
+   "commits": [
+    "b4c3c04"
+   ],
+   "note": "movePlayer: 지금 줄 앞이 비면 줄 가운데로, 막혔고 0.28칸 넘게 걸쳤으면 옆 줄로"
+  },
+  {
+   "name": "폭탄 수·화력·속도 아이템",
+   "upstream_how": "Bonus 종류 speed·bomb·fire, Player.applyBonus 가 bombsMax·bombStrength·velocity 를 올림",
+   "evidence": "semantics-bombsmax-property(Bot.js:212·304, Player.js:119·337)",
+   "status": "implemented",
+   "commits": [
+    "b4c3c04"
+   ],
+   "note": "불씨·도토리 주머니·바람 깃털 + 잎사귀 방패·모래시계(새로 더함). 상한 8·8·4"
+  },
+  {
+   "name": "아이템이 불꽃에 탐",
+   "upstream_how": "없음(덤불이 사라질 때 보너스가 나오고 불꽃과 무관)",
+   "evidence": "app-analysis.summary.json(Bonus.js 함수 목록)",
+   "status": "implemented",
+   "commits": [
+    "b4c3c04"
+   ],
+   "note": "바닥에 나온 아이템은 다음 불꽃에 타고 불꽃을 멈춤(새 규칙)"
+  },
+  {
+   "name": "컴퓨터 상대: 위험 칸 피하기",
+   "upstream_how": "Bot.isSafe 가 모든 폭탄의 getDangerPositions 를 모아 갈 칸이 안전한지 봄",
+   "evidence": "semantics-issafe-callers(Bot.js:71·165), semantics-danger-callers(Bot.js:324)",
+   "status": "implemented",
+   "commits": [
+    "b4c3c04"
+   ],
+   "note": "dangerMap 이 칸마다 남은 초를 계산하고 연쇄로 앞당겨지는 시간까지 반영. 도착 시각보다 늦게 타는 칸만 밟는 BFS"
+  },
+  {
+   "name": "컴퓨터 상대: 폭탄 놓기 판단",
+   "upstream_how": "Bot.plantBomb: 옆에 나무 상자(getNearWood)가 있거나 사람을 죽일 수 있으면(wantKillPlayer) 놓음",
+   "evidence": "semantics-plant-callers(Bot.js:66)",
+   "status": "implemented",
+   "commits": [
+    "b4c3c04"
+   ],
+   "note": "놓기 전에 가짜 폭탄을 더한 위험 지도로 피할 곳이 6칸 안에 있는지 확인. 실력 4단계(생각 간격·공격성)"
+  },
+  {
+   "name": "적 종류별 움직임",
+   "upstream_how": "없음(적은 Bot 하나뿐)",
+   "evidence": "app-analysis.summary.json(Bot.js 함수 목록)",
+   "status": "implemented",
+   "commits": [
+    "b4c3c04"
+   ],
+   "note": "6종: 아무 데나·곧게 뛰다 쉼·덤불 뚫기·쫓기·불꽃 피하기·두 번 맞기. 판 시작 2초 졸기"
+  },
+  {
+   "name": "대장 5종",
+   "upstream_how": "없음",
+   "evidence": "—",
+   "status": "implemented",
+   "commits": [
+    "b4c3c04"
+   ],
+   "note": "졸개 부르기·뛰어서 내려앉기(공중 무적)·덤불 뚫고 돌진·얼음 덤불 쌓기·불씨 폭탄 낳기(자기 폭탄엔 무적)"
+  },
+  {
+   "name": "출구와 판 35개",
+   "upstream_how": "없음(한 판짜리 대전)",
+   "evidence": "—",
+   "status": "implemented",
+   "commits": [
+    "b4c3c04"
+   ],
+   "note": "출구는 덤불 속, 적을 다 쓰러뜨리면 열림. 무늬 7종으로 판 생성, 길이 끊기는 바위는 놓지 않음"
+  },
+  {
+   "name": "같은 화면 대전",
+   "upstream_how": "Player 두 명 키 설정(controls), 봇과 함께 4명",
+   "evidence": "app-analysis.summary.json(listeners: InputEngine addListener)",
+   "status": "implemented",
+   "commits": [
+    "b4c3c04"
+   ],
+   "note": "사람 2명 또는 컴퓨터 섞어 최대 4명, 세 판 두 번 먼저 등, 1분 남으면 바위 조이기"
+  },
+  {
+   "name": "저장",
+   "upstream_how": "없음",
+   "evidence": "—",
+   "status": "implemented",
+   "commits": [
+    "b4c3c04"
+   ],
+   "note": "localStorage(try/catch): 연 판·깬 판·최고 점수·능력·대전 설정"
+  },
+  {
+   "name": "터치·게임패드",
+   "upstream_how": "없음(키보드만)",
+   "evidence": "app-analysis.summary.json(listeners)",
+   "status": "implemented",
+   "commits": [
+    "b4c3c04"
+   ],
+   "note": "미끄러뜨리는 방향 패드·도토리 단추(44px 이상), 1·2번 패드"
+  },
+  {
+   "name": "발로 차서 폭탄 밀기",
+   "upstream_how": "없음",
+   "evidence": "—",
+   "status": "deferred",
+   "commits": [],
+   "note": "장르에 흔하지만 이번 범위 밖"
+  },
+  {
+   "name": "원격 기폭",
+   "upstream_how": "없음",
+   "evidence": "—",
+   "status": "deferred",
+   "commits": [],
+   "note": "이번 범위 밖"
+  },
+  {
+   "name": "소리 파일·스프라이트",
+   "upstream_how": "CreateJS 스프라이트·사운드 파일",
+   "evidence": "—",
+   "status": "not-copied",
+   "commits": [],
+   "note": "그림은 Canvas 코드, 소리는 WebAudio 로 새로 만듦"
+  }
+ ],
+ "limitations": [
+  "모듈 시스템이 없는 전역 <script> 앱이라 import-reference-source 관계 0, 앱 분석 modules 0",
+  "Class.extend({ 이름: function(){} }) 안 메서드가 이름 없는 함수로 남아 105개 중 1개(Class)만 이름이 잡힘. 그래서 함수 지문으로 호출자 추적을 못 하고 같은 이름의 속성 추적으로 대신함",
+  "의미 관계 3,311개 중 candidate 1,793, unknown 1,730(object-flow/ambiguous-target 929). 속성 추적 9개 중 7개가 ambiguous",
+  "모듈 기준 trace-application-feature 는 Bomb.js·Bot.js 모두 같은 27노드(그래프 전체)로 퍼져 기능 단위로 좁혀지지 않음",
+  "프레임 수·타이머 값(폭탄 2초, 속도 2px) 같은 수치는 관계만 보여 주고 값은 알려 주지 않음 — 코드를 직접 읽어 확인",
+  "실행하지 않는 정적 분석이라 손맛은 볼 수 없음 — 도토리 펑은 자동 플레이·판 검사 시험으로 확인"
+ ],
+ "doc": "docs/rea/html5-bombergirl-analysis.md",
+ "evidence_dir": "docs/rea/evidence"
 }
